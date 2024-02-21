@@ -1,9 +1,9 @@
 declare module "*.d.template" {
     const content: string;
-    export default content;
+    export { content as default };
 }
 
 declare module "*.template" {
     const content: string;
-    export default content;
+    export { content as default };
 }

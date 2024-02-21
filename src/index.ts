@@ -1,3 +1,4 @@
+import "./@types/global.d.ts";
 import { loadEnv, type PluginOption } from "vite";
 import { minimatch } from "minimatch";
 import { MagicString } from "@napi-rs/magic-string";
