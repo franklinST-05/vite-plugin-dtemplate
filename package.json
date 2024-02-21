@@ -1,0 +1,39 @@
+{
+    "name": "vite-plugin-dtemplate",
+    "version": "1.0.0",
+    "license": "MIT",
+    "author": "Frank <franklinteixeira205@gmail.com>",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "typings": "dist/index.d.ts",
+    "files": ["/dist"],
+    "types": "src/@types",
+    "exports": {
+        "types": "./src/@types/index.d.ts",
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.js"
+    },
+    "keywords": [
+        "vite",
+        "vite-plugin",
+        "plugin",
+        "dtemplate",
+        "template",
+        "template-string",
+        "template-file"
+    ],
+    "scripts": {
+        "build": "tsup"
+    },
+    "dependencies": {
+        "@napi-rs/magic-string": "^0.3.4",
+        "jsesc": "^3.0.2",
+        "minimatch": "^9.0.3"
+    },
+    "devDependencies": {
+        "@types/jsesc": "^3.0.3",
+        "@types/node": "^20.11.19",
+        "typescript": "^5.3.3",
+        "vite": "^5.1.4"
+    }
+}
