@@ -3,16 +3,10 @@
     "version": "1.0.0",
     "license": "MIT",
     "author": "Frank <franklinteixeira205@gmail.com>",
-    "main": "dist/index.js",
-    "module": "dist/index.mjs",
-    "typings": "dist/index.d.ts",
-    "files": ["/dist"],
-    "types": "src/@types",
-    "exports": {
-        "types": "./src/@types/index.d.ts",
-        "import": "./dist/index.mjs",
-        "require": "./dist/index.js"
-    },
+    "types": "dist/index.d.ts",
+    "files": [
+        "/dist"
+    ],
     "keywords": [
         "vite",
         "vite-plugin",
