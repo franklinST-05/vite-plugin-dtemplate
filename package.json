@@ -29,8 +29,8 @@
         "build": "tsup"
     },
     "dependencies": {
-        "@napi-rs/magic-string": "^0.3.4",
         "jsesc": "^3.0.2",
+        "magic-string": "^0.30.7",
         "minimatch": "^9.0.3"
     },
     "devDependencies": {

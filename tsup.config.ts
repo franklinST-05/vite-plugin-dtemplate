@@ -6,5 +6,6 @@ export default defineConfig({
     splitting: false,
     clean: true,
     dts: true,
+    minify: true,
     external: ["vite"],
 });

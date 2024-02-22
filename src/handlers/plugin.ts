@@ -1,7 +1,7 @@
 import { loadEnv, type PluginOption } from "vite";
 import { minimatch } from "minimatch";
-import { MagicString } from "@napi-rs/magic-string";
 import { fillTemplate } from "./template";
+import MagicString from "magic-string";
 import escape from "jsesc";
 
 let ENVS: Record<string, string | number | boolean> = {};
@@ -52,7 +52,7 @@ export function templateFile(
                     file: sourcemap.file,
                     source: sourcemap.sources[0],
                     includeContent: true,
-                }).toMap(),
+                }),
             }
         }
     });
