@@ -7,7 +7,7 @@
 ## Install
 
 ```sh
-yarn add vite-plugin-dts
+yarn add vite-plugin-dtemplate
 ```
 
 ## Usage
