@@ -1,6 +1,6 @@
 {
     "name": "vite-plugin-dtemplate",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "author": "Frank <franklinteixeira205@gmail.com>",
     "repository": {
@@ -8,7 +8,7 @@
         "url": "git+https://github.com/franklinST-05/vite-plugin-dtemplate.git"
     },
     "description": "Vite Plugin DTemplate",
-    "main": "dist/index.js",
+    "main": "./dist/index.js",
     "keywords": [
         "vite",
         "vite-plugin",
@@ -23,8 +23,8 @@
     },
     "types": "./dist/index.d.ts",
     "files": [
-        "/dist",
-        "/dist/utils"
+        "./dist",
+        "./dist/utils"
     ],
     "exports": {
         ".": {
