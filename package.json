@@ -4,6 +4,8 @@
     "license": "MIT",
     "author": "Frank <franklinteixeira205@gmail.com>",
     "repository": "https://github.com/franklinST-05/vite-plugin-dtemplate",
+    "description": "Vite Plugin DTemplate",
+    "main": "dist/index.js",
     "keywords": [
         "vite",
         "vite-plugin",
