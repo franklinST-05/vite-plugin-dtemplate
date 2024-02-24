@@ -1,6 +1,6 @@
 {
     "name": "vite-plugin-dtemplate",
-    "version": "1.0.3",
+    "version": "1.0.5",
     "license": "MIT",
     "author": "Frank <franklinteixeira205@gmail.com>",
     "repository": {
@@ -8,7 +8,7 @@
         "url": "git+https://github.com/franklinST-05/vite-plugin-dtemplate.git"
     },
     "description": "Vite Plugin DTemplate",
-    "main": "./dist/index.js",
+    "main": "./dist/index.mjs",
     "keywords": [
         "vite",
         "vite-plugin",
@@ -21,19 +21,19 @@
     "scripts": {
         "build": "tsup"
     },
-    "types": "./dist/index.d.ts",
+    "types": "./dist/index.d.mts",
     "files": [
         "./dist",
         "./dist/utils"
     ],
     "exports": {
         ".": {
-            "types": "./dist/index.d.ts",
-            "default": "./dist/index.js"
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
         },
         "./utils": {
-            "types": "./dist/utils/index.d.ts",
-            "default": "./dist/utils/index.js"
+            "types": "./dist/utils/index.d.mts",
+            "default": "./dist/utils/index.mjs"
         }
     },
     "dependencies": {
