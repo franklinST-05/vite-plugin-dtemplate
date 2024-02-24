@@ -1,0 +1,11 @@
+Prezado {{clientName}},
+
+É com satisfação que a <<#VITE_BUSINESS_NAME>> se apresenta como uma empresa comprometida em oferecer os melhores serviços para atender às suas necessidades.
+Com X anos de experiência no mercado, nossa empresa se destaca pela excelência no atendimento e pela qualidade de nossos produtos.
+
+Nosso CNPJ é <<#VITE_BUSINESS_DOCUMENT>> e estamos localizados na WEB. Para nos contatar, envie um email para <<#VITE_BUSINESS_EMAIL>>.
+
+Estamos ansiosos para trabalhar juntos e proporcionar uma experiência única. Seja bem-vindo à família <<#VITE_BUSINESS_NAME>>!
+
+Atenciosamente,
+<<# VITE_BUSINESS_NAME >>.
