@@ -4,18 +4,6 @@
     "license": "MIT",
     "author": "Frank <franklinteixeira205@gmail.com>",
     "repository": "https://github.com/franklinST-05/vite-plugin-dtemplate",
-    "types": "dist/index.d.ts",
-    "main": "dist/index.js",
-    "module": "dist/index.mjs",
-    "typings": "dist/index.d.ts",
-    "exports": {
-        "types": "./dist/index.d.ts",
-        "import": "./dist/index.mjs",
-        "require": "./dist/index.js"
-    },
-    "files": [
-        "/dist"
-    ],
     "keywords": [
         "vite",
         "vite-plugin",
@@ -27,6 +15,21 @@
     ],
     "scripts": {
         "build": "tsup"
+    },
+    "types": "./dist/index.d.ts",
+    "files": [
+        "/dist",
+        "/dist/utils"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        },
+        "./utils": {
+            "types": "./dist/utils/index.d.ts",
+            "default": "./dist/utils/index.js"
+        }
     },
     "dependencies": {
         "jsesc": "^3.0.2",
