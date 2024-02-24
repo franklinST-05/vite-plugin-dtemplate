@@ -6,14 +6,14 @@ import escape from "jsesc";
 
 let ENVS: Record<string, string | number | boolean> = {};
 
-export interface TemplateFileConfig {
+export interface DTemplateConfig {
     compact?: false;
     emptyValue?: string;
     skipOnEmpty?: true;
 }
 
-export default function templateFile(
-    config: TemplateFileConfig = {}
+export function dTemplatePlugin(
+    config: DTemplateConfig = {}
 ): PluginOption {
     return ({
         name: "d.template:file",
