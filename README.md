@@ -1,62 +1,88 @@
-# Vite Plugin DTemplate
-Esta é uma biblioteca simples para preenchimento de templates no Vite. Ela permite que você defina templates com placeholders e depois os preencha com valores específicos.
+<h1 align="center">vite-plugin-dtemplate</h1>
 
-### Uso
-Aqui está um exemplo básico de como usar a biblioteca:
+<p align="center">
+  This is a library for template handling in Vite. It allows you to define templates with placeholders (.d.templates) and use environment variables and parameters for custom templates.
+</p>
 
-```tsx
+## Install
 
-import React, { useState } from "react";
-import { fillTemplate } from "vite-plugin-dtemplate";
-import welcomeTemplate from "./example.d.template";
-
-const AppPage: React.FC = () => {
-
-    const [template, setTemplate] = useState<string>(welcomeTemplate);
-
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        const { clientName } = event.target as unknown as {
-            clientName: HTMLInputElement
-        };
-
-        setTemplate(fillTemplate({
-            template: welcomeTemplate,
-            params: {
-                clientName: clientName.value,
-            }
-        }));
-    };
-
-    return (
-        <main>
-            <form onSubmit={handleSubmit}>
-                <h1>BASIC EXAMPLE</h1>
-                <div className="row">
-                    <input name="clientName" placeholder="Your name" />
-                    <button type="submit">Emitir</button>
-                </div>
-                <br />
-                <pre>{template}</pre>
-            </form>
-            <br />
-            <br />
-            <h1>ENVS</h1>
-            <pre>{JSON.stringify(import.meta.env, null, 2)}</pre>
-        </main>
-    );
-};
-
-export default AppPage;
+```sh
+yarn add vite-plugin-dts
 ```
 
-### Como funciona o template
-No template, as chaves {{name}} representam os parâmetros que serão substituídos pelos valores em tempo de execução. Por exemplo, {{clientName}} será substituído pelo nome do cliente.
+## Usage
+In `vite.config.ts`:
+```tsx
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import { dTemplatePlugin } from "vite-plugin-dtemplate";
 
-Já as <<#NAME>> representam as envs da aplicação, que são buildadas junto ao restante do texto em uma variavel. Por exemplo, <<#VITE_BUSINESS_NAME>> será substituído pelo nome do seu negócio definida em nas suas envs locais do projeto.
+export default defineConfig({
+    plugins: [
+        react(),
+        dTemplatePlugin(),
+    ],
+});
+```
+## Templates
+Template files follow a specific extension pattern (.d.template), for example:
 
-### Contribuição
-Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
+`.env`
+```dotenv
+VITE_APPLICATION_NAME="VITE"
+```
 
-### Licença
-Este projeto está licenciado sob a MIT License.
+`example.d.template`
+```textplain
+Hello world by <<#VITE_APPLICATION_NAME>>
+{{endLine}}
+```
+
+`index.tsx`
+
+```tsx
+import React from "react";
+import example from "./example.d.template";
+
+export const App: React.FC = () => {
+    return (
+        <div>
+            {example}
+            {/* RESULT:
+                Hello world by VITE
+                {{endLine}}
+            */}
+        </div>
+    );
+};
+```
+
+<b>OR</b>
+
+```tsx
+import React from "react";
+import example from "./example.d.template";
+import { fillTemplate } from "vite-plugin-dtemplate/utils";
+
+export const App: React.FC = () => {
+    return (
+        <div>
+            {fillTemplate({
+                template: example,
+                params: {
+                    endLine: "end line..."
+                }
+            })}
+            {/* RESULT:
+                Hello world by VITE
+                end line...
+            */}
+        </div>
+    );
+};
+```
+### Contributing
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+### License
+This project is licensed under the MIT License.
