@@ -24,6 +24,25 @@ export default defineConfig({
     ],
 });
 ```
+
+## Typing
+In `vite-env.d.ts`
+
+```typescript
+/// <reference types="vite/client" />
+
+declare module "*.d.template" {
+    const content: string;
+    export default content;
+}
+
+declare module "*.template" {
+    const content: string;
+    export default content;
+}
+
+```
+
 ## Templates
 Template files follow a specific extension pattern (.d.template), for example:
 
